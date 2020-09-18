@@ -13,7 +13,7 @@
 
 Route::view('/', 'site.pages.homepage');
 
-Route::view('/login', 'site.pages.homepage');
+Route::get('/category/{slug}', 'Site\CategoryController@show')->name('category.show');
 
 Auth::routes();
 

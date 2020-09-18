@@ -28,11 +28,11 @@
                         <label for="parent">Parent Category <span class="m-l-5 text-danger"></span></label>
                         <select name="parent_id" id="parent" class="form-control custom-select m-15 @error('name') is-invalid @enderror">
                                 <option value="0">Select a parent category</option>
-                                @foreach ($categories as $category)
-                                    @if ($targetCategory->parent_id == $category->id)
-                                        <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                                @foreach ($categories as $key => $category)
+                                    @if ($targetCategory->parent_id == $key)
+                                        <option value="{{ $key }}" selected> {{ $category }} </option>
                                     @else
-                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        <option value="{{ $key }}"> {{ $category }} </option>
                                     @endif
                                 @endforeach
                         </select>
@@ -58,11 +58,13 @@
                     </div>
                     <div class="form-group">
                         <div class="row">
+                            @if ($targetCategory->image != null)
                             <div class="col-md-2">
                                 <figure class="mt-2" style="width: 80px; height: auto;">
                                     <img src="{{ asset('storage/'.$targetCategory->image)}}" id="categoryImage" class="img-fluid" alt="img" />
                                 </figure>
                             </div>
+                            @endif
                             <div class="col-md-10">
                                 <label class="control-label">Category Image</label>
                                 <input class="form-control @error('image') is-invalid @enderror" type="file" name="image" />

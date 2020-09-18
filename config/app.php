@@ -177,6 +177,11 @@ return [
         App\Providers\SettingServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
 
+        /*
+         * Custom Provider
+         */
+        App\Providers\ViewComposerServiceProvider::class,
+
     ],
 
     /*
