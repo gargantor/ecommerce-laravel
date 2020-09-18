@@ -101,17 +101,17 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="control-label" for="special_price">Special Price</label>
+                                            <label class="control-label" for="sale_price">Sale Price</label>
                                             <input
-                                            class="form-control @error('special_price') is-invalid @enderror"
+                                            class="form-control @error('sale_price') is-invalid @enderror"
                                             type="text"
-                                            placeholder="Enter product special price"
-                                            id="special_price"
-                                            name="special_price"
-                                            value="{{ old('special_price') }}"
+                                            placeholder="Enter product sale price"
+                                            id="sale_price"
+                                            name="sale_price"
+                                            value="{{ old('sale_price') }}"
                                             />
                                             <div class="invalid-feedback active">
-                                                <i class="fa fa-exclamation-circle fa-fw"></i> @error('special_price') <span>{{ $message }}</span> @enderror
+                                                <i class="fa fa-exclamation-circle fa-fw"></i> @error('sale_price') <span>{{ $message }}</span> @enderror
                                             </div>
                                         </div>
                                     </div>

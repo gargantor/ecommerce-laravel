@@ -20,5 +20,6 @@ class CategoriesTableSeeder extends Seeder
         ]);
 
         factory(App\Models\Category::class, 10)->create();
+        //factory(App\Models\Category::class, 10)->states('child')->create();
     }
 }
