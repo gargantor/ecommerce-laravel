@@ -19,6 +19,13 @@ Route::get('/product/{slug}', 'Site\ProductController@show')->name('product.show
 
 Route::post('/product/add/cart', 'Site\ProductController@addToCart')->name('product.add.cart');
 
+Route::group(['prefix' => 'cart'], function () {
+    Route::get('/', 'Site\CartController@getCart')->name('checkout.cart');
+    Route::get('/item/{id}/remove', 'Site\CartController@removeItem')->name('checkout.cart.remove');
+    Route::get('/clear', 'Site\CartController@clearCart')->name('checkout.cart.clear');
+
+});
+
 Auth::routes();
 
 
