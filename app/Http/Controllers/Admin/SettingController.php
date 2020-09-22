@@ -46,8 +46,11 @@ class SettingController extends BaseController
 
         } else {
             $keys = $request->except('_token');
+            Setting::set('stripe_payment_method', '0');
+            //dd($keys);
 
             foreach ($keys as $key => $value) {
+                //dd($key, $value);
                 Setting::set($key, $value);
             }
         }

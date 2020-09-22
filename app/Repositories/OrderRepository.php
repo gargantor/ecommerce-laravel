@@ -47,7 +47,7 @@ class OrderRepository extends BaseRepository implements OrderContract
                 $orderItem = new OrderItem([
                     'product_id'    => $item->associatedModel->id,
                     'quantity'      => $item->quantity,
-                    'price'         => $item->getPriceSum()
+                    'price'         => $item->price,
                 ]);
 
                 $order->items()->save($orderItem);
@@ -56,6 +56,16 @@ class OrderRepository extends BaseRepository implements OrderContract
 
         return $order;
 
+    }
+
+    public function listOrders(String $order= 'id', string $sort ='desc', array $column=['*'])
+    {
+        return $this->all($column, $order, $sort);
+    }
+
+    public function findOrderByNumber($orderNumber)
+    {
+        return Order::where('order_number', $orderNumber)->first();
     }
 }
 ?>

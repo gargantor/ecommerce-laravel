@@ -14,7 +14,7 @@
             </a>
         </li>
         <li>
-            <a class="app-menu__item {{Route::currentRouteName() == 'admin.settings' ? 'active' : ''}}" href="{{route('admin.settings')}}">
+            <a class="app-menu__item {{Route::currentRouteName() == 'admin.settings' ? 'active' : ''}}" href="{{route('admin.orders.index')}}">
                 <i class="app-menu__icon fa fa-bar-chart"></i>
                 <span class="app-menu__label">Order</span>
             </a>

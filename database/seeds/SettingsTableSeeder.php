@@ -74,7 +74,7 @@ class SettingsTableSeeder extends Seeder
             'value' => '',
         ],
         [
-            'key'   => 'stripe_pament_method',
+            'key'   => 'stripe_payment_method',
             'value' => '',
         ],
         [
